@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import socket
 
 PORT=4444
@@ -12,3 +13,9 @@ while True:
  cli.send(cmd)
 
 cli.close()
+=======
+import urllib2
+files = urllib2.urlopen('http://wikipedia.org').read().splitlines()
+#opfor l in files[:]: print l.split()[-1]
+print files
+>>>>>>> abcf159129d4140547354f2358dd37ac77bcad6a

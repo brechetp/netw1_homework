@@ -6,7 +6,9 @@ def geturl ( url ):
 
  s.connect((url , 80))
  s.sendall(request)
- print s.recv(10000)
+ print s.rec://github.com/brechetp/netw1_homework.git()
+ result = s.recv(1024)
+ while 
  s.close
 
 geturl ("stackoverflow.com")
