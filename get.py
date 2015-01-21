@@ -1,4 +1,5 @@
 import socket
+import re
 
 def geturl ( url ):
  request = b"GET / HTTP/1.1\nHost: "+url+"\n\n"
@@ -6,7 +7,19 @@ def geturl ( url ):
 
  s.connect((url , 80))
  s.sendall(request)
- print s.recv(10000)
+ result = s.recv(4096)
+ accu = result
+ while (len(result)>0):
+  print 'ok'
+  result = s.recv(4096)
+  accu += result
+ return accu
  s.close
 
-geturl ("stackoverflow.com")
+def filter(string):
+ pattern = ".*(<table .*\n <caption>\n .* List of studio album .*\n </table>).*"
+ prog = re.compile(string)
+ result = prog.match(string)
+ return result
+
+

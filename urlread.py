@@ -12,3 +12,9 @@ class MyHTMLParser(HTMLParser.HTMLParser):
 parser = MyHTMLParser()
 parser.feed('<html><head><title>Test</title></head>'
         '<body><h1>Parse me! </h1></body></html>')
+
+def string_from_file(filename):
+ res=""
+ for line in open(filename, 'r'):
+  res += line
+ return res
